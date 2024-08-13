@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>@Tony</title>
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no, width=device-width">
+    <link rel="shortcut icon" href="https://assets-global.website-files.com/62a6e19b906fa55f541799d7/62a98d041030ce99f782fbde_Variant5_256.png">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom right, #ed1880, #fe8517);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-weight: bold;
+        }
+        .container {
+            text-align: center;
+            width: 90%;
+            max-width: 600px;
+        }
+        .header {
+            background-color: white;
+            color: black;
+            padding: 20px;
+            border-radius: 20px 20px 0 0;
+            position: relative;
+        }
+        button {
+            background-color: black;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 30px;
+            font-size: 1em;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        .profile {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .profile img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+        }
+        .message-prompt p {
+            margin: 0.5;
+            padding: 3px;
+        }
+        .message-box {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 20px;
+            border-radius: 0 0 30px 30px;
+            margin-bottom: 20px;
+            position: relative;
+        }
+        .message-box textarea {
+            width: 100%;
+            height: 100px;
+            background: transparent;
+            border: none;
+            color: white;
+            font-size: 1.2em;
+            resize: none;
+            padding: 10px;
+            box-sizing: border-box;
+            font-weight: bold;
+        }
+        .message-box textarea::placeholder {
+            color: white;
+        }
+        .icon {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+        }
+        .icon img {
+            width: 30px;
+            height: 30px;
+        }
+        .footer {
+            margin-top: 20px;
+        }
+        .anonymous-tooltip {
+            margin-top: 20px;
+            font-size: 1.15em;
+        }
+        .download-prompt {
+            margin-top: 20px;
+            font-size: 1.3em;
+        }
+        .bottom-button {
+            margin-top: 20px;
+            display: inline-block;
+            background-color: black;
+            color: white;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 30px;
+            font-size: 1.5em;
+            text-decoration: none;
+            cursor: pointer;
+            font-weight: bold;
+            animation: zoom 3s infinite, vibrate 1.3s infinite;
+        }
+        .terms {
+            margin-top: 20px;
+        }
+        .terms a {
+            color: white;
+            margin: 0 10px;
+            text-decoration: none;
+            font-size: 0.8em;
+            font-weight: bold;
+        }
+        @keyframes zoom {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1.1); }
+        }
+        @keyframes vibrate {
+            0% { transform: translateX(0); }
+            10% { transform: translateX(-1.5px); }
+            20% { transform: translateX(1px); }
+            30% { transform: translateX(-1.8px); }
+            40% { transform: translateX(2.5px); }
+            50% { transform: translateX(-1px); }
+            60% { transform: translateX(1.5px); }
+            70% { transform: translateX(-1.2px); }
+            80% { transform: translateX(1px); }
+            90% { transform: translateX(-1.3px); }
+            100% { transform: translateX(0.8px); }
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="container">
+        <form class="form" method="post" onsubmit="sendMessage(event)">
+            <div class="bubble">
+                <div class="header">
+                    <div class="profile">
+                        <img src="https://ngl.link/images/default_avatar.png" alt="Profile Picture">
+                        <span>@Tony</span>
+                    </div>
+                    <div class="message-prompt">
+                        <p>Envoie-moi des messages anonymes !</p>
+                    </div>
+                </div>
+                <div class="message-box">
+                    <textarea id="message" placeholder="Écrivez votre message ici..."></textarea>
+                    <div class="icon">
+                        <img src="https://assets-global.website-files.com/62a6e19b906fa55f541799d7/62a98d041030ce99f782fbde_Variant5_256.png" alt="Icon">
+                    </div>
+                </div>
+                <button class="submit" type="submit" style="transform: translateZ(0px); z-index: 1000">Envoyer !</button>
+                <div class="footer">
+                    <div class="anonymous-tooltip">🔒 Questions-réponses anonymes</div>
+                    <div class="download-prompt">👇 <span class="clickCount">242</span> personnes viennent d’appuyer sur ce bouton👇</div>
+                    <a class="bottom-button" href="https://apps.apple.com/us/app/ngl-ask-me-anything/id1596550932?ppid=543cb167-5bdc-448f-a202-e5506f5d2837">Reçois tes propres messages !</a>
+                    <div class="terms">
+                        <a href="login.php">Terms</a>
+                        <a href="#">Privacy</a>
+                    </div>
+                    <input class="deviceId" type="hidden" name="deviceId" id="deviceId">
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
